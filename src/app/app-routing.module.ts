@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { ScannedComponent } from './scanned/scanned.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
-const routes: Routes = [];
+
+const routes: Routes = [
+ { path: 'nfc/:id', component: ScannedComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
