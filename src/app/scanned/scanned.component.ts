@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ScanService } from '../scan-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-scanned',
@@ -12,30 +11,16 @@ import { ScanService } from '../scan-service.service';
 export class ScannedComponent implements OnInit {
   
   idScanned = '';
-  link = '';
 
-  constructor(private route: ActivatedRoute, private router: Router, private scanService: ScanService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe( param => {
+    this.route.queryParams.subscribe( param => {
       this.idScanned = param['id'];
+      setTimeout(() => {
+        window.location.href = `http://linktr.ee/${this.idScanned}` ;
+      }, 5000);
     });
-  
-    this.scanService.getInfo(this.idScanned).subscribe(data => {
-      if(data.info){
-        this.getLink(data.info);
-      } else {
-        this.createUser();
-      }
-        //this.link = info || this.createUser() ;
-      });
-  }
-
-  createUser() {
-    this.router.navigate(['create-user']);
-  }
-
-  getLink( info: string) {
-      window.location.href = `http://${info}` ;
+    
   }
 }
