@@ -17,9 +17,9 @@ export class ScannedComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe( param => {
       this.idScanned = param['id'];
-      setTimeout(() => {
+     /*  setTimeout(() => {
         window.location.href = `http://linktr.ee/${this.idScanned}` ;
-      }, 5000);
+      }, 5000); */
     });
     
   }
