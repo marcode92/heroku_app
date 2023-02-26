@@ -8,3 +8,39 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
     }
+
+.container-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-card{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+.container-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-margin {
+    margin:12px
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 65% 65%;
+    grid-template-areas: " a b "
+                         " c d "
+                         " c f "
+                         " c . "
+                         " c . "                       
+                         " e . " ;}
+  
+  .a { grid-area: a; background-color: red;    }
+  .b { grid-area: b; background-color: green;  }
+  .c { grid-area: c; background-color: blue; }
+  .d { grid-area: d; background-color: orange; }
+  .e { grid-area: e; background-color: teal;   }
+  .f { grid-area: f; background-color: purple; }

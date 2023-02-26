@@ -28,7 +28,17 @@ export class ScannedComponent implements OnInit {
         this.userProfile = res.data.attributes.user_info;
         console.log(this.userProfile);
       })
-    }
-    
+    }    
   }
+
+  getLogo(){
+    if(this.userProfile){
+      const a= `../../assets/img/${this.userProfile.logo}`;
+      return a;
+    }
+
+    return '';
+  }
+
+  
 }

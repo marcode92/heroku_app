@@ -16,4 +16,6 @@ export interface userInfo {
     logo: string,
     title: string,
     info_bio: string,
+    phone:string,
+    email:string,
 }
