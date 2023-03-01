@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CrudUserService } from '../crud-user.service';
 import { userInfo, UserProfile } from '../user-profile';
@@ -6,7 +6,8 @@ import { userInfo, UserProfile } from '../user-profile';
 @Component({
   selector: 'app-scanned',
   templateUrl: './scanned.component.html',
-  styleUrls: ['./scanned.component.css']
+  styleUrls: ['./scanned.component.css'],
+  encapsulation: ViewEncapsulation.None, 
 })
 
 export class ScannedComponent implements OnInit {
