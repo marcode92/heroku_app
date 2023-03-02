@@ -32,13 +32,8 @@ export class ScannedComponent implements OnInit {
     }    
   }
 
-  getLogo(){
-    if(this.userProfile){
-      const a= `../../assets/img/${this.userProfile.logo}`;
-      return a;
-    }
-
-    return '';
+  getPath(){   
+    return "../../assets/img/logosimona.jpg";
   }
 
   
