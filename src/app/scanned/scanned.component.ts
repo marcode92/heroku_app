@@ -33,7 +33,7 @@ export class ScannedComponent implements OnInit {
   }
 
   getPath(){   
-    return "../../assets/img/logosimona.jpg";
+    return "../../assets/img/logo-simona";
   }
 
   
