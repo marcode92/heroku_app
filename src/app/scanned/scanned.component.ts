@@ -6,12 +6,12 @@ import { userInfo, UserProfile } from '../user-profile';
 @Component({
   selector: 'app-scanned',
   templateUrl: './scanned.component.html',
-  styleUrls: ['./scanned.component.css'],
+  styleUrls: ['./scanned.component.scss'],
   encapsulation: ViewEncapsulation.None, 
 })
 
 export class ScannedComponent implements OnInit {
-  
+  a = '../../assets/img/logo-simona.png'
   idScanned = '';
   userProfile?: userInfo;
   constructor(private route: ActivatedRoute, private readonly crudUserService: CrudUserService) { }
@@ -33,7 +33,7 @@ export class ScannedComponent implements OnInit {
   }
 
   getPath(){   
-    return "../../assets/img/logo-simona.png";
+    return "url('../../assets/img/logo-simona.png')";
   }
 
   
