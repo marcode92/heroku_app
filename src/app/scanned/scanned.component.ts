@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { USER_INFO, VAR_SYS } from 'src/config';
+import { VAR_SYS } from 'src/config';
 import { CrudUserService } from '../crud-user.service';
 import { userInfo, UserProfile } from '../user-profile';
 
@@ -48,7 +48,7 @@ export class ScannedComponent implements OnInit {
     if(!window.location.href.includes('code=')){
       window.location.href=
       `https://api.instagram.com/oauth/authorize?
-        ${this.userProfile?.client_id}&${USER_INFO.redirect_uri}&${USER_INFO.scope}&${USER_INFO.response_type}`
+        ${this.userProfile?.client_id}&${VAR_SYS.redirect_uri}&${VAR_SYS.scope}&${VAR_SYS.response_type}`
       } else {    
     this.crudUserService.getTokenAccess(this.userProfile.client_id, window.location.href.split('code=')[1])
       .subscribe(result => {
