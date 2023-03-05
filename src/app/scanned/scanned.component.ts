@@ -12,24 +12,25 @@ import { userInfo, UserProfile } from '../user-profile';
 
 export class ScannedComponent implements OnInit {
   a = '../../assets/img/logo-simona.png'
-  idScanned = '';
+  id_scan = '';
   userProfile?: userInfo;
-  constructor(private route: ActivatedRoute, private readonly crudUserService: CrudUserService) { }
+  constructor(private route: ActivatedRoute, private readonly crudUserService: CrudUserService ) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe( param => {
-      this.idScanned = param['id'];
-     /*  setTimeout(() => {
-        window.location.href = `http://linktr.ee/${this.idScanned}` ;
-      }, 5000); */
+      this.id_scan = param['id'];
     });
 
-    if(this.idScanned){
-      this.crudUserService.getUser(this.idScanned).subscribe((res: UserProfile) => {
+   /*  if(this.id_scan){
+      this.crudUserService.getUser(this.id_scan).subscribe((res: UserProfile) => {
         this.userProfile = res.data.attributes.user_info;
         console.log(this.userProfile);
-      })
-    }    
+ */
+        this.crudUserService.getCode(/* this.userProfile.client_id */'910676340350897').subscribe((res: any) => {
+          console.log(res);
+        })
+    //   })
+    //}     
   }
 
   getPath(){   

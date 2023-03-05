@@ -17,5 +17,5 @@ export interface userInfo {
     title: string,
     info_bio: string,
     phone:string,
-    email:string,
+    client_id: string,
 }
