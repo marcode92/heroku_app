@@ -42,20 +42,21 @@ export class ScannedComponent implements OnInit {
   }
 
   getToken(){
-    if(this.userProfile){
-      this.userProfile.client_id = '910676340350897' //TODO: remove
+    /* if(this.userProfile){
+      this.userProfile.client_id = '910676340350897' */ //TODO: remove
 
     if(!window.location.href.includes('code=')){
       window.location.href=
       `https://api.instagram.com/oauth/authorize?
-        ${this.userProfile?.client_id}&${VAR_SYS.redirect_uri}&${VAR_SYS.scope}&${VAR_SYS.response_type}`
+      client_id:910676340350897&${VAR_SYS.redirect_uri}&${VAR_SYS.scope}&${VAR_SYS.response_type}`
       } else {    
-    this.crudUserService.getTokenAccess(this.userProfile.client_id, window.location.href.split('code=')[1])
+    this.crudUserService.getTokenAccess(/* this.userProfile.client_id */'910676340350897', window.location.href.split('code=')[1])
       .subscribe(result => {
         VAR_SYS.token_auth_graph = result.access_token;
+        this.getImages();
     });
     }
-  }
+//  }
     console.log(window.location.href); 
   }
 
