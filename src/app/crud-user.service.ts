@@ -33,7 +33,7 @@ export class CrudUserService {
     params = params.append('grant_type', this.user_info.grant_type)
     params = params.append('code', code)
 
-    return this.http.post<userToken>(`${path}`, {params, headers: this.headers} )    
+    return this.http.post<userToken>(`${path}`, {body: params, headers: this.headers} )    
   }
 
   getMediaID(){
