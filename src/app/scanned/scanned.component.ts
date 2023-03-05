@@ -34,10 +34,10 @@ export class ScannedComponent implements OnInit {
         }) */
     //   })
     //}
-    
-    window.location.href=
-    'https://api.instagram.com/oauth/authorize?client_id=910676340350897&redirect_uri=https://hithatsme.herokuapp.com/nfc&scope=user_profile,user_media&response_type=code'
-    
+    if(!window.location.href.includes('code')){
+      window.location.href=
+      'https://api.instagram.com/oauth/authorize?client_id=910676340350897&redirect_uri=https://hithatsme.herokuapp.com/nfc&scope=user_profile,user_media&response_type=code'
+    }
     console.log(window.location.href);    
   }
 
