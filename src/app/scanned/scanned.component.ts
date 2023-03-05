@@ -47,8 +47,7 @@ export class ScannedComponent implements OnInit {
 
     if(!window.location.href.includes('code=')){
       window.location.href=
-      `https://api.instagram.com/oauth/authorize?
-      client_id:910676340350897&${VAR_SYS.redirect_uri}&${VAR_SYS.scope}&${VAR_SYS.response_type}`
+      `https://api.instagram.com/oauth/authorize?client_id=910676340350897&redirect_uri=${VAR_SYS.redirect_uri}&scope=${VAR_SYS.scope}&response_type=${VAR_SYS.response_type}`
       } else {    
     this.crudUserService.getTokenAccess(/* this.userProfile.client_id */'910676340350897', window.location.href.split('code=')[1])
       .subscribe(result => {
