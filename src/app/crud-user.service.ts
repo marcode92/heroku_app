@@ -16,6 +16,9 @@ export class CrudUserService {
     'Access-Control-Allow-Origin': '*',
     'Authorization': VAR_SYS.token_postgres });
   
+    headers2 = new HttpHeaders({
+      'Content-Type': 'multipart/form-data',
+      'Access-Control-Allow-Origin': '*' });
   user_info = VAR_SYS;
 
   constructor(private http: HttpClient) {}
@@ -33,7 +36,7 @@ export class CrudUserService {
     params = params.append('grant_type', this.user_info.grant_type)
     params = params.append('code', code)
 
-    return this.http.post<userToken>(`${path}`, params )    
+    return this.http.post<userToken>(`${path}`, params, {headers:this.headers2} )    
   }
 
   getMediaID(){
