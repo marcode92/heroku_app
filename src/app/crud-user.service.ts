@@ -55,7 +55,7 @@ export class CrudUserService {
       }
     });
 
-    xhr.open("POST", "https://api.instagram.com/oauth/access_token");
+    xhr.open("POST", "https://api.instagram.com/oauth/access_token",this.headers2);
 
     xhr.send(data);
   }
