@@ -11,6 +11,8 @@ import { userInfo, UserProfile } from '../user-profile';
 })
 
 export class ScannedComponent implements OnInit {
+  req = new XMLHttpRequest();  
+  
   a = '../../assets/img/logo-simona.png'
   id_scan = '';
   userProfile?: userInfo;
@@ -26,11 +28,17 @@ export class ScannedComponent implements OnInit {
         this.userProfile = res.data.attributes.user_info;
         console.log(this.userProfile);
  */
-        this.crudUserService.getCode(/* this.userProfile.client_id */'910676340350897').subscribe((res: any) => {
-          console.log(res);
-        })
+        /* this.crudUserService.getCode(this.userProfile.client_id '910676340350897').subscribe((res: any) => {
+          console.log("data",res.data);
+          window.location.href=JSON.parse(res.data)
+        }) */
     //   })
-    //}     
+    //}
+    
+    window.location.href=
+    'https://api.instagram.com/oauth/authorize?client_id=910676340350897&redirect_uri=https://hithatsme.herokuapp.com/nfc&scope=user_profile,user_media&response_type=code'
+    
+    console.log(window.location.href);    
   }
 
   getPath(){   

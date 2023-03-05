@@ -11,7 +11,14 @@ export class CrudUserService {
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
     'Authorization': TOKEN });
+  
+    headers2 = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    });
+
   user_info = USER_INFO;
 
   constructor(private http: HttpClient) {
@@ -30,7 +37,7 @@ export class CrudUserService {
     params = params.append('scope', this.user_info.scope)
     params = params.append('response_type',this.user_info.response_type)
     
-    return this.http.get<any>(`${path}`, {params} )    
+    return this.http.get<any>(`${path}`, {params, headers: this.headers2} )    
   }
 
 }
