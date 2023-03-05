@@ -57,6 +57,8 @@ export class CrudUserService {
 
     xhr.open("POST", "https://api.instagram.com/oauth/access_token");
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
+    xhr.setRequestHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+    xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
     xhr.send(data);
   }
 
