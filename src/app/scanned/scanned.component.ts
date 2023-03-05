@@ -53,11 +53,12 @@ export class ScannedComponent implements OnInit {
 
         console.log(window.location.href);
         code = code.substring(code.indexOf("=")+1,code.lastIndexOf("#_"))
-
-        this.crudUserService.getTokenAccess(/* this.userProfile.client_id */'910676340350897', code).subscribe(result => {
-        VAR_SYS.token_auth_graph = result.access_token;
-        this.getImages();
-    });
+        let res = this.crudUserService.getTokenAccess('910676340350897', code);
+        console.log(res);
+       /*  this.crudUserService.getTokenAccess(/* this.userProfile.client_id '910676340350897', code).subscribe(result => {
+        VAR_SYS.token_auth_graph = result.access_token;*/
+       // this.getImages();
+   // }); 
     }
 //  }
     console.log(window.location.href); 
